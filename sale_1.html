@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Flourish</title>
-	<meta charset="utf-8">
+  <title>Flourish</title>
+  <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
@@ -11,89 +11,22 @@
     <link href="https://fonts.googleapis.com/css?family=Lora|Quicksand|Roboto|Roboto+Slab" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2-bootstrap.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/sale_1.css">
+
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-        <div class="container-fluid topnav">
-            
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="index.html" class="navbar-brand">
-                    <img src="images/Logo.png">
-                </a>
-            </div>
-            
-            <div class="collapse navbar-collapse navbar-right" id="mainNavbar">
-                <ul class="nav navbar-nav" >
-                  <li><a href="index.html" id="link">Home</a></li>
-                  <li><a href="LogIn_S.html" id="salelink">Update Sales</a></li>
-                  <li><a href="LogIn_R.html" id="returnlink">Return Stock</a></li>
-                  <li><a href="logs.html" id="link">Logs</a></li>
-                </ul>
-            </div>
-        </div>
-</nav>
-<div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <div class="panel small">
-             <h3 class="text-center">SEARCH PRODUCTS</h3>
-             <div id="searchBar">
-                <input type="text" class="form-control" placeholder="Search" id="textInput" list="dropdown"/><br><br>
-                <button class="click" style="outline-style: none;text-decoration: none;"><i class="glyphicon glyphicon-search"></i></button>
-                <div id="datalist" style="overflow-y: auto;height: 100px;"><datalist id="dropdown" onclick="myFunction();"></datalist></div>
-             </div>
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <div class="panel large">
-             <div class="animated fadeIn">
-                <h3 class="text-center">UPDATE THE SALES</h3>
-                <form>
-                    <input type="text" class="form-control" id="textInput_1" placeholder="Enter here...">
-                    <input type="button" value="UPDATE" id="submit" style="outline-style: none;">
-                </form>
-                <p id="result_1"></p>
-             </div>
-          </div>
-        </div>
-    </div>
-  </div>
-
-    <div class="container contact animated fadeIn">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Let's Get In Touch!</h2>
-                    <hr>
-                    
-                </div>
-            </div>
-            <ul id="icons">
-              <li><a href="https://facebook.com"><i class="fa fa-facebook fa-2x"></i></a></li>
-              <li><a href="https://www.google.com/gmail/"><i class="fa fa-google fa-2x"></i></a></li>
-              <li><a href="https://github.com"><i class="fa fa-github fa-2x"></i></a></li>
-              <li><a href="https://linkedin.com"><i class="fa fa-linkedin fa-2x"></i></a></li>
-            </ul>    
-        <a href="sale.html" title="to the top"><i class="glyphicon glyphicon-chevron-up"></i></a>
-    </div> 
+ 
+  <input  id="inputText1" list="dropdown1">
+  <datalist id="dropdown1">
+  </datalist>
+  <button id="submit">Submit</button>
+  <div id="result"></div>
 <script type="text/javascript">
-	$(document).ready(function(){
-    $("#prodList,#backSearch").hide();
-    var searchValue = $("#textInput").val();
-        localStorage.setItem('prodSearch',searchValue);
-        var id= localStorage.getItem('ware_house');
-
-       $("#textInput").keypress(function(){
-         
+  $(document).ready(function(){
+    var ar = [];
+    // $('#inputText').val(' ');
+       $("#inputText1").keypress(function(){
+         var searchValue = $("#inputText1").val();
+         localStorage.setItem('prodSearch',searchValue);
          var url= 'http://flourish-release.ap-south-1.elasticbeanstalk.com/stocks/searchProducts';
          console.log(localStorage.getItem('ware_house'));
          $.ajax({
@@ -103,53 +36,26 @@
            data: {id: localStorage.getItem('ware_house') , keyword: localStorage.getItem('prodSearch')},
            success: 
            function(wb){
-              $("#dropdown").html(' ');
+              console.log(wb);
               for(i in wb.allproducts){
                 var $prod = wb.allproducts[i];
-                $("#dropdown").append('<option class="auto" id="'+ $prod.id+ '" onclick="myFunction(id)" value="'+ $prod.name+'"/>');
+                ar[$prod.name] = $prod.id;
+                $("#dropdown1").append('<option value="'+$prod.name +'" />');
+                if(i>15)
+                  break;
               }
-             
-            } 
+            }
         });
-        
        });
-       function myFunction(d){
-          var id= d;
-          console.log(id);
-       }
-       $(document).on("click","#textInput_1",function(e){
-           var id = $(".auto").attr('id');
-           console.log(id);
-           localStorage.setItem('prod_ID',id);
-       });
-        $(document).on("click","#submit",function(e){
-          var url= 'http://flourish-release.ap-south-1.elasticbeanstalk.com/stocks/sale'
-          $.ajax({
-            type: 'POST',
-            url: url,
-            data: {id: localStorage.getItem('prod_ID') ,quantity: $('#textInput_1').val()},
-            success: 
-                function(wb){
-                    console.log(wb);
-                    $("#result_1").show();
-                    $('#result_1').text(wb.message);    
-                }
-            
-          });
-          setTimeout(function () {
-             $("#result_1,#prodList,#backSearch,#message").hide();
-             $("#searchBar").show();
-             $("#textInput_1,#textInput").val(' ');
-             $("#result").val(' ');
-          }, 3000); 
-        });  
-        $("#salelink").click(function(){
-           localStorage.setItem('ware_house',warehouse_id);   
-        });
-        $("#returnlink").click(function(){
-           localStorage.setItem('ware_house',warehouse_id);
-        });              
-  }); 
+
+      $("#submit").click(function() {
+        var value = $("#inputText1").val();
+        // var valArray = value.split("-");
+        // console.log(valArray[0]);
+        console.log(ar[value]);
+        // Do task here
+      })
+  });
 </script>
 </body>
 </html>
