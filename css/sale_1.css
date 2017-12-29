@@ -118,7 +118,10 @@ td.product{
 }
 @media(max-width: 320px){
    input#inputText1{
+
         margin-left: 103rem;
+
+        margin-left: 103.5rem;
         margin-top: 7rem;
    } 
    button.click{
@@ -153,7 +156,11 @@ td.product{
 }
 @media(max-width: 375px) and (min-width: 330px){
    input#inputText1{
+
         margin-left: 103rem;
+
+        margin-left: 103.5rem;
+
         margin-top: 7rem;
    } 
    button.click{
@@ -185,7 +192,9 @@ td.product{
 }
 @media(max-width: 425px) and (min-width: 420px){
    input#inputText1{
+
         margin-left: 103rem;
+        margin-left: 103.5rem;
         margin-top: 7rem;
    } 
    button.click{
@@ -215,6 +224,7 @@ td.product{
   }
 
 }
+
 @media(max-width: 599px) and (min-width: 500px){
   
    input#inputText1{
@@ -236,6 +246,7 @@ td.product{
         margin-top: 7rem;
    } 
 }
+
 @media(max-width: 768px) and (min-width: 700px){
    input#inputText1{
         margin-left: 77rem;
