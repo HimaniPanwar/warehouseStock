@@ -1,23 +1,5 @@
 @import url("index.css");
-.select2-container--default .select2-selection--single {
-    background-color: #fff;
-    border: 1px solid #aaa;
-    border-radius: 4px;
-    width: 250px;
-    min-width: 250px;
-}
-.select2-container--default .select2-selection--single .select2-selection__arrow b {
-    border-color: #888 transparent transparent transparent;
-    border-style: solid;
-    border-width: 5px 4px 0 4px;
-    height: 0;
-    left: 50%;
-    margin-left: 187px;
-    margin-top: -2px;
-    position: absolute;
-    top: 50%;
-    width: 0;
-}
+
 button.click{
     background-color: transparent;
     height: 3.5rem;
@@ -104,14 +86,18 @@ div#datalist{
     border: 1px solid #239B56;
      
 }
-input#textInput{
+input#inputText1{
     margin-left: 15rem;
     margin-top: 5rem;
     border: 1px solid lightgrey;
     color: #239B56;
-    width: 24rem;
+    width: 18em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
-input#textInput:focus,input#textInput:active{
+input#inputText1:focus,input#inputText1:active{
     border: 1px solid #239B56;
 }
 input#textInput_1:focus,input#textInput_1:active{
@@ -131,8 +117,8 @@ td.product{
    cursor: pointer;
 }
 @media(max-width: 320px){
-   input#textInput{
-        margin-left: 103.5rem;
+   input#inputText1{
+        margin-left: 103rem;
         margin-top: 7rem;
    } 
    button.click{
@@ -166,8 +152,8 @@ td.product{
 
 }
 @media(max-width: 375px) and (min-width: 330px){
-   input#textInput{
-        margin-left: 103.5rem;
+   input#inputText1{
+        margin-left: 103rem;
         margin-top: 7rem;
    } 
    button.click{
@@ -198,8 +184,8 @@ td.product{
 
 }
 @media(max-width: 425px) and (min-width: 420px){
-   input#textInput{
-        margin-left: 103.5rem;
+   input#inputText1{
+        margin-left: 103rem;
         margin-top: 7rem;
    } 
    button.click{
@@ -229,8 +215,29 @@ td.product{
   }
 
 }
-@media(max-width: 768px) and (min-width: 600px){
-   input#textInput{
+@media(max-width: 599px) and (min-width: 500px){
+  
+   input#inputText1{
+        margin-left: 10.5rem;
+        margin-top: 7rem;
+   } 
+}
+@media(max-width: 699px) and (min-width: 600px){
+  
+   input#inputText1{
+        margin-left: 18.5rem;
+        margin-top: 7rem;
+   } 
+}
+@media(max-width: 999px) and (min-width: 800px){
+  
+   input#inputText1{
+        margin-left: 23.5rem;
+        margin-top: 7rem;
+   } 
+}
+@media(max-width: 768px) and (min-width: 700px){
+   input#inputText1{
         margin-left: 77rem;
         margin-top: 7rem;
    } 
@@ -250,13 +257,13 @@ td.product{
      margin-left: 32rem;
   }
   input#submit{
-    margin-left: 45%;
+    margin-left: 44%;
     margin-bottom: 4rem;
     font-size: 10px;
   }
   input#textInput_1{
-     width: 45%;
-     margin-left: 20rem;
+     width: 35%;
+     margin-left: 23rem;
      margin-top: 7rem;
   }
   datalist{
@@ -271,7 +278,7 @@ td.product{
 
 }
 @media(max-width: 1024px) and (min-width: 1000px){
-   input#textInput{
+   input#inputText1{
         margin-left: 40rem;
         margin-top: 7rem;
    } 
@@ -298,4 +305,10 @@ td.product{
      margin-top: 7rem;
   }
 
+}
+@media(max-width: 1440px) and (min-width: 1400px){
+  input#inputText1{
+        margin-left: 3rem;
+        margin-top: 5rem;
+   } 
 }

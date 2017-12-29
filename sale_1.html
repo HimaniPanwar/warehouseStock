@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Flourish</title>
-	<meta charset="utf-8">
+  <title>Flourish</title>
+  <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
@@ -11,13 +11,11 @@
     <link href="https://fonts.googleapis.com/css?family=Lora|Quicksand|Roboto|Roboto+Slab" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2-bootstrap.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/sale_1.css">
+       <link rel="stylesheet" type="text/css" href="css/sale_1.css">
+
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+ <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
         <div class="container-fluid topnav">
             
             <div class="navbar-header">
@@ -48,9 +46,8 @@
           <div class="panel small">
              <h3 class="text-center">SEARCH PRODUCTS</h3>
              <div id="searchBar">
-                <input type="text" class="form-control" placeholder="Search" id="textInput" list="dropdown"/><br><br>
-                <button class="click" style="outline-style: none;text-decoration: none;"><i class="glyphicon glyphicon-search"></i></button>
-                <div id="datalist" style="overflow-y: auto;height: 100px;"><datalist id="dropdown" onclick="myFunction();"></datalist></div>
+                <input type="text" class="form-control" placeholder="Search" id="inputText1" list="dropdown1">
+                <datalist id="dropdown1"></datalist>
              </div>
           </div>
         </div>
@@ -68,7 +65,6 @@
         </div>
     </div>
   </div>
-
     <div class="container contact animated fadeIn">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -85,15 +81,14 @@
             </ul>    
         <a href="sale.html" title="to the top"><i class="glyphicon glyphicon-chevron-up"></i></a>
     </div> 
+  
 <script type="text/javascript">
-	$(document).ready(function(){
-    $("#prodList,#backSearch").hide();
-    var searchValue = $("#textInput").val();
-        localStorage.setItem('prodSearch',searchValue);
-        var id= localStorage.getItem('ware_house');
-
-       $("#textInput").keypress(function(){
-         
+  $(document).ready(function(){
+    var ar = [];
+    // $('#inputText').val(' ');
+       $("#inputText1").keypress(function(){
+         var searchValue = $("#inputText1").val();
+         localStorage.setItem('prodSearch',searchValue);
          var url= 'http://flourish-release.ap-south-1.elasticbeanstalk.com/stocks/searchProducts';
          console.log(localStorage.getItem('ware_house'));
          $.ajax({
@@ -103,26 +98,27 @@
            data: {id: localStorage.getItem('ware_house') , keyword: localStorage.getItem('prodSearch')},
            success: 
            function(wb){
-              $("#dropdown").html(' ');
+              console.log(wb);
               for(i in wb.allproducts){
                 var $prod = wb.allproducts[i];
-                $("#dropdown").append('<option class="auto" id="'+ $prod.id+ '" onclick="myFunction(id)" value="'+ $prod.name+'"/>');
+                ar[$prod.name] = $prod.id;
+                $("#dropdown1").append('<option value="'+$prod.name +'" />');
+                if(i>15)
+                  break;
               }
-             
-            } 
+            }
         });
-        
        });
-       function myFunction(d){
-          var id= d;
-          console.log(id);
-       }
-       $(document).on("click","#textInput_1",function(e){
-           var id = $(".auto").attr('id');
-           console.log(id);
-           localStorage.setItem('prod_ID',id);
-       });
-        $(document).on("click","#submit",function(e){
+
+      $(document).on("change","#inputText1",function() {
+        var value = $("#inputText1").val();
+        // var valArray = value.split("-");
+        // console.log(valArray[0]);
+        console.log(ar[value]);
+        localStorage.setItem('prod_ID',ar[value]);
+        // Do task here
+      });
+      $(document).on("click","#submit",function(e){
           var url= 'http://flourish-release.ap-south-1.elasticbeanstalk.com/stocks/sale'
           $.ajax({
             type: 'POST',
@@ -148,8 +144,8 @@
         });
         $("#returnlink").click(function(){
            localStorage.setItem('ware_house',warehouse_id);
-        });              
-  }); 
+        });        
+  });
 </script>
 </body>
 </html>
