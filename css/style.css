@@ -502,6 +502,14 @@ button.warehouse_place{
         margin-top: 2rem;
     }
 }
+@media(max-width: 499px) and (min-width: 450px){
+    .navbar-brand>img{
+        width: 7rem;
+        margin-top: -1rem;
+        margin-left: 1rem;
+    }
+
+}
 @media(max-width: 425px) and (min-width: 420px){
     .img-responsive{
         margin-left: 1rem;
@@ -581,6 +589,13 @@ button.warehouse_place{
     #searchBar{
         margin-left: -53.7rem;
         margin-top: 1rem;
+    }
+}
+@media(max-width: 999px) and (min-width: 800px){
+    .navbar-brand>img{
+        width: 14rem;
+        margin-top: 0rem;
+        margin-left: 0rem;
     }
 }
 @media(max-width: 1024px) and (min-width: 999px){

@@ -1,18 +1,11 @@
 @import url("index.css");
-
-button.click{
-    background-color: transparent;
-    height: 3.5rem;
-    margin-top: 5rem;
-    border-radius: 3px;
-    border: none;
-    margin-left: -2rem;
-    color: lightgrey;
-}
+*:focus {
+   outline: 0;
+ }
 input#textInput_1{
     margin-left: 28%;
     width: 45%;
-    border: 1px solid lightgrey;
+    border: 1px solid #909497;
 }
 input#submit{
           margin-left: 41%;
@@ -38,105 +31,23 @@ input#submit{
     max-height: 50rem;
     min-height: 50rem;
 }
-table#result tr#myTable{
-    padding-right: 2rem;
-}
-th,tr,td,table{
-    text-align: center;
-}
-th#sizeCol{
-    padding-left: 5.7rem;
-}
-td{
-    color: #239B56;
-    padding-left: 3rem;
-    padding-right: 16rem;
-}
-th{
-    color: #117864;
-    text-align: center;
-}
-#result_1,#message{
+#result_1{
     text-align: center;
     font-size: 17px;
     color: #239B56;
 }
-#message{
-    margin-top: 4rem;
-}
-div#datalist{
-  position: absolute;
-}
-#backSearch{
-    margin-top: 4rem;
-    background-color: #464646;
-    color: white;
-    font-family: 'Montserrat',sans-serif;
-    border-radius: 5px;
-    padding: 0.5rem 1.5rem;
-    text-transform: uppercase;
-    font-size: 16px;
-    border: 2px solid lightgrey;
-    margin-left: 41%;
-
-}
-#backSearch:hover{
-    background-color: transparent;
-    color: #239B56;
-    border: 1px solid #239B56;
-     
-}
-input#inputText1{
-    margin-left: 15rem;
-    margin-top: 5rem;
-    border: 1px solid lightgrey;
-    color: #239B56;
-    width: 18em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-input#inputText1:focus,input#inputText1:active{
-    border: 1px solid #239B56;
-}
 input#textInput_1:focus,input#textInput_1:active{
     border: 1px solid #239B56;
 }
-.form-control:focus ~ button.click,.form-control:active ~ button.click{
-    color: #239B56;
-}
-#searchBar{
-    display: inline-flex;
-    margin-top: -4rem;
-}
-input::-webkit-calendar-picker-indicator {
-  display: none;
-} 
-td.product{
-   cursor: pointer;
+span.select2.select2-container.select2-container--default {
+    margin-left: 16rem;
+    margin-top: 1rem;
 }
 @media(max-width: 320px){
-   input#inputText1{
+  span.select2.select2-container.select2-container--default{
+    margin-left: 104rem;
+  } 
 
-        margin-left: 103rem;
-        margin-top: 7rem;
-   } 
-   button.click{
-      margin-top: 7rem;
-   }
-  td{
-    color: #239B56;
-    padding-left: 0rem;
-    padding-right: 6rem;
-  }
-  th#sizeCol{
-    padding-left: 2.7rem;
-  }
-  input#backSearch{
-     font-size: 10px;
-     margin-left: 11rem;
-  }
   input#submit{
     margin-left: 37%;
     margin-bottom: 4rem;
@@ -153,23 +64,9 @@ td.product{
 
 }
 @media(max-width: 375px) and (min-width: 330px){
-   input#inputText1{
-
-        margin-left: 103rem;
-        margin-top: 7rem;
-   } 
-   button.click{
-      margin-top: 7rem;
-   }
-  td{
-    color: #239B56;
-    padding-left: 0rem;
-    padding-right: 8rem;
-  }
-  input#backSearch{
-     font-size: 10px;
-     margin-left: 13.5rem;
-  }
+  span.select2.select2-container.select2-container--default{
+    margin-left: 104rem;
+  } 
   input#submit{
     margin-left: 37%;
     margin-bottom: 4rem;
@@ -186,22 +83,10 @@ td.product{
 
 }
 @media(max-width: 425px) and (min-width: 400px){
-   input#inputText1{
-        margin-left: 102.5rem;
-        margin-top: 7rem;
-   } 
-   button.click{
-      margin-top: 7rem;
-   }
-  td{
-    color: #239B56;
-    padding-left: 0rem;
-    padding-right: 9rem;
-  }
-  input#backSearch{
-     font-size: 10px;
-     margin-left: 16rem;
-  }
+   span.select2.select2-container.select2-container--default{
+    margin-left: 104rem;
+  } 
+
   input#submit{
     margin-left: 40%;
     margin-bottom: 4rem;
@@ -217,12 +102,30 @@ td.product{
   }
 
 }
+@media(max-width: 499px) and (min-width: 450px){
+  span.select2.select2-container.select2-container--default{
+    margin-left: 11rem;
+  } 
+
+  input#submit{
+    margin-left: 40%;
+    margin-bottom: 4rem;
+    font-size: 10px;
+  }
+  input#textInput_1{
+     width: 70%;
+     margin-left: 6rem;
+     margin-top: 7rem;
+  }
+  .panel.large{
+     margin-top: 2rem;
+  }
+}
 @media(max-width: 399px) and (min-width: 380px){
-  
-   input#inputText1{
-        margin-left: 5.5rem;
-        margin-top: 7rem;
+    span.select2.select2-container.select2-container--default{
+    margin-left: 6.5rem;
    } 
+
    input#textInput_1 {
     margin-left: 21%;
     width: 60%;
@@ -235,46 +138,31 @@ td.product{
 }
 @media(max-width: 599px) and (min-width: 500px){
   
-   input#inputText1{
-        margin-left: 10.5rem;
-        margin-top: 7rem;
+   span.select2.select2-container.select2-container--default{
+    margin-left: 12.5rem;
    } 
+   .panel.large{
+     margin-top: 2rem;
+  }
 }
 @media(max-width: 699px) and (min-width: 600px){
   
-   input#inputText1{
-        margin-left: 15.5rem;
-        margin-top: 7rem;
+    span.select2.select2-container.select2-container--default{
+    margin-left: 17.5rem;
    } 
 }
 @media(max-width: 999px) and (min-width: 800px){
   
-   input#inputText1{
-        margin-left: 23.5rem;
-        margin-top: 7rem;
+  span.select2.select2-container.select2-container--default{
+    margin-left: 24.5rem;
    } 
 }
 
 @media(max-width: 768px) and (min-width: 700px){
-   input#inputText1{
-        margin-left: 77rem;
-        margin-top: 7rem;
+   span.select2.select2-container.select2-container--default{
+      margin-left: 78rem;
    } 
-   button.click{
-      margin-top: 7rem;
-   }
-  td{
-    color: #239B56;
-    padding-left: 0rem;
-    padding-right: 14rem;
-  }
-  th#sizeQuant{
-    padding-right: 4rem;
-  }
-  input#backSearch{
-     font-size: 10px;
-     margin-left: 32rem;
-  }
+  
   input#submit{
     margin-left: 44%;
     margin-bottom: 4rem;
@@ -285,9 +173,6 @@ td.product{
      margin-left: 23rem;
      margin-top: 7rem;
   }
-  datalist{
-    margin-left: -10rem;
-  }
   .panel.large{
      margin-top: 2rem;
   }
@@ -297,22 +182,9 @@ td.product{
 
 }
 @media(max-width: 1024px) and (min-width: 1000px){
-   input#inputText1{
-        margin-left: 40rem;
-        margin-top: 7rem;
+   span.select2.select2-container.select2-container--default{
+    margin-left: 41rem;
    } 
-   button.click{
-      margin-top: 7rem;
-   }
-  td{
-    color: #239B56;
-    padding-left: 0rem;
-    padding-right: 10rem;
-  }
-  input#backSearch{
-     font-size: 10px;
-     margin-left: 19rem;
-  }
   input#submit{
     margin-left: 42%;
     margin-bottom: 4rem;
@@ -321,13 +193,12 @@ td.product{
   input#textInput_1{
      width: 60%;
      margin-left: 10rem;
-     margin-top: 7rem;
+     margin-top: 5rem;
   }
 
 }
 @media(max-width: 1440px) and (min-width: 1400px){
-  input#inputText1{
-        margin-left: 3rem;
-        margin-top: 5rem;
+  span.select2.select2-container.select2-container--default{
+     margin-left: 4rem;
    } 
 }
