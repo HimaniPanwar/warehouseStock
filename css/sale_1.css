@@ -5,11 +5,12 @@
 input#textInput_1{
     margin-left: 28%;
     width: 45%;
-    border: 1px solid #909497;
+    border: 1px solid lightgrey;
 }
 input#submit{
           margin-left: 41%;
           margin-bottom: 4rem;
+          font-size: 14px;
 }
 .text-center {
           text-align: center;
@@ -31,6 +32,7 @@ input#submit{
     max-height: 50rem;
     min-height: 50rem;
 }
+
 #result_1{
     text-align: center;
     font-size: 17px;
@@ -39,66 +41,145 @@ input#submit{
 input#textInput_1:focus,input#textInput_1:active{
     border: 1px solid #239B56;
 }
-span.select2.select2-container.select2-container--default {
-    margin-left: 16rem;
-    margin-top: 1rem;
+span.select2.select2-container.select2-container--default{
+     margin-left: 16rem;
+     margin-top: 1rem;
 }
 @media(max-width: 320px){
   span.select2.select2-container.select2-container--default{
-    margin-left: 104rem;
+     margin-left: 103.2rem;
   } 
-
-  input#submit{
-    margin-left: 37%;
-    margin-bottom: 4rem;
-    font-size: 10px;
-  }
-  input#textInput_1{
-     width: 70%;
-     margin-left: 4.5rem;
-     margin-top: 7rem;
-  }
   .panel.large{
      margin-top: 2rem;
+     margin-left: 2rem;
+  }
+  .panel.small{
+     margin-left: 2rem;
+  }
+  input#textInput_1{
+    width: 70%;
+    margin-left: 4rem;
+  }
+   input#submit{
+    margin-left: 36%;
+    font-size: 12px;
+  }
+   .container.contact.animated.fadeIn {
+     width: 104%;
   }
 
 }
-@media(max-width: 375px) and (min-width: 330px){
+@media(max-width: 360px) and (min-width: 330px){
   span.select2.select2-container.select2-container--default{
-    margin-left: 104rem;
+     margin-left: 103rem;
   } 
-  input#submit{
-    margin-left: 37%;
-    margin-bottom: 4rem;
-    font-size: 10px;
-  }
-  input#textInput_1{
-     width: 70%;
-     margin-left: 4.5rem;
-     margin-top: 7rem;
-  }
   .panel.large{
      margin-top: 2rem;
+     margin-left: 2rem;
+  }
+  .panel.small{
+     margin-left: 2rem;
+  }
+  input#submit{
+    margin-left: 11rem;
+    font-size: 12px;
+  }
+  input#textInput_1{
+     margin-left: 4.5rem;
+     width: 70%;
+  }
+   .container.contact.animated.fadeIn {
+     width: 104%;
+  }
+}
+@media(max-width: 375px) and (min-width: 370px){
+  span.select2.select2-container.select2-container--default{
+     margin-left: 103rem;
+  } 
+  .panel.large{
+     margin-top: 2rem;
+     margin-left: 2rem;
+  }
+  .panel.small{
+     margin-left: 2rem;
+  }
+  input#submit{
+    margin-left: 12rem;
+    font-size: 12px;
+  }
+  input#textInput_1{
+     margin-left: 5.5rem;
+     width: 70%;
+  }
+   .container.contact.animated.fadeIn {
+     width: 104%;
   }
 
 }
-@media(max-width: 425px) and (min-width: 400px){
-   span.select2.select2-container.select2-container--default{
-    margin-left: 104rem;
-  } 
-
-  input#submit{
-    margin-left: 40%;
+@media(max-width: 399px) and (min-width: 380px){
+    span.select2.select2-container.select2-container--default{
+    margin-left: 5.5rem;
+   } 
+   .panel.large,.panel.small{
+     margin-left: 2rem;
+   }
+   input#textInput_1 {
+    margin-left: 21%;
+    width: 60%;
+   }
+   input#submit {
+    margin-left: 36%;
     margin-bottom: 4rem;
-    font-size: 10px;
+   }
+    .container.contact.animated.fadeIn {
+     width: 104.5%;
   }
-  input#textInput_1{
-     width: 70%;
-     margin-left: 6rem;
-     margin-top: 7rem;
-  }
+}
+@media(max-width: 414px) and (min-width: 400px){
+  span.select2.select2-container.select2-container--default{
+     margin-left: 103rem;
+  } 
   .panel.large{
      margin-top: 2rem;
+     margin-left: 2rem;
+  }
+  .panel.small{
+     margin-left: 2rem;
+  }
+  input#submit{
+    margin-left: 38%;
+    font-size: 12px;
+  }
+  input#textInput_1{
+     margin-left: 6rem;
+     width: 70%;
+  }
+   .container.contact.animated.fadeIn {
+     width: 104%;
+  }
+
+}
+@media(max-width: 425px) and (min-width: 420px){
+  span.select2.select2-container.select2-container--default{
+     margin-left: 103rem;
+  } 
+  .panel.large{
+     margin-top: 2rem;
+     margin-left: 2rem;
+  }
+  .panel.small{
+     margin-left: 2rem;
+  }
+  input#submit{
+    margin-left: 37%;
+    font-size: 12px;
+  }
+  input#textInput_1{
+     margin-left: 6rem;
+     width: 70%;
+  }
+   .container.contact.animated.fadeIn {
+     width: 104%;
   }
 
 }
@@ -108,33 +189,25 @@ span.select2.select2-container.select2-container--default {
   } 
 
   input#submit{
-    margin-left: 40%;
+    margin-left: 41%;
     margin-bottom: 4rem;
     font-size: 10px;
   }
   input#textInput_1{
-     width: 70%;
-     margin-left: 6rem;
+     width: 60%;
+     margin-left: 9rem;
      margin-top: 7rem;
   }
   .panel.large{
      margin-top: 2rem;
+     margin-left: 2rem;
   }
-}
-@media(max-width: 399px) and (min-width: 380px){
-    span.select2.select2-container.select2-container--default{
-    margin-left: 6.5rem;
-   } 
-
-   input#textInput_1 {
-    margin-left: 21%;
-    width: 60%;
-    border: 1px solid lightgrey;
-   }
-   input#submit {
-    margin-left: 36%;
-    margin-bottom: 4rem;
-   }
+  .panel.small{
+    margin-left: 2rem;
+  }
+  .container.contact.animated.fadeIn {
+     width: 103%;
+  }
 }
 @media(max-width: 599px) and (min-width: 500px){
   
@@ -148,57 +221,66 @@ span.select2.select2-container.select2-container--default {
 @media(max-width: 699px) and (min-width: 600px){
   
     span.select2.select2-container.select2-container--default{
-    margin-left: 17.5rem;
+    margin-left: 16rem;
    } 
+    .container.contact.animated.fadeIn {
+     width: 102.5%;
+  }
+   .panel.large{
+     margin-left: 2rem;
+     margin-top: 2rem;
+   }
+   .panel.small{
+      margin-left: 2rem;
+   }
 }
-@media(max-width: 999px) and (min-width: 800px){
+@media(max-width: 768px) and (min-width: 700px){
+   span.select2.select2-container.select2-container--default{
+    margin-left: 77rem;
+  } 
+  .panel.large{
+    margin-top: 2rem;
+  }
+  input#submit{
+    margin-left: 42%;
+  }
+  .container.contact.animated.fadeIn {
+     width: 101%;
+  }
+}
+@media(max-width: 900px) and (min-width: 800px){
   
   span.select2.select2-container.select2-container--default{
     margin-left: 24.5rem;
    } 
-}
-
-@media(max-width: 768px) and (min-width: 700px){
-   span.select2.select2-container.select2-container--default{
-      margin-left: 78rem;
-   } 
-  
-  input#submit{
-    margin-left: 44%;
-    margin-bottom: 4rem;
-    font-size: 10px;
-  }
-  input#textInput_1{
-     width: 35%;
-     margin-left: 23rem;
-     margin-top: 7rem;
-  }
-  .panel.large{
+   .panel.large{
      margin-top: 2rem;
-  }
-  .panel.small{
-     margin-top: 4rem;
-  }
-
+   }
+   input#submit{
+     margin-left: 31rem;
+   }
 }
+
 @media(max-width: 1024px) and (min-width: 1000px){
-   span.select2.select2-container.select2-container--default{
+  input#textInput_1{
+    margin-top: 5rem;
+    width: 55%;
+    margin-left: 11rem;
+  }
+  span.select2.select2-container.select2-container--default{
     margin-left: 41rem;
    } 
-  input#submit{
-    margin-left: 42%;
-    margin-bottom: 4rem;
-    font-size: 10px;
+   .container.contact.animated.fadeIn {
+     width: 101%;
   }
-  input#textInput_1{
-     width: 60%;
-     margin-left: 10rem;
-     margin-top: 5rem;
-  }
-
 }
 @media(max-width: 1440px) and (min-width: 1400px){
+  input#textInput_1{
+    margin-top: 5rem;
+    width: 55%;
+    margin-left: 12.5rem;
+  }
   span.select2.select2-container.select2-container--default{
-     margin-left: 4rem;
+    margin-left: 4rem;
    } 
 }

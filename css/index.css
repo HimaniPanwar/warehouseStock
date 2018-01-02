@@ -109,7 +109,22 @@ h3 {
         width: 115%;
     }
 }
-
+@media(max-width: 499px) and (min-width: 480px){
+   
+     button.warehouse_place{
+        width: 112%;
+    }
+}
+@media(max-width: 699px) and (min-width: 600px){
+    button.warehouse_place{
+        width: 110%;
+    }
+}
+@media(max-width: 900px) and (min-width: 800px){
+    button.warehouse_place{
+        width: 85%;
+    }
+}
 @media(max-width: 1024px) and (min-width: 999px){
 
      button.warehouse_place{
@@ -119,9 +134,9 @@ h3 {
         width: 87%;
     }
 }
-@media (max-width: 1250px) and (min-width: 1160px){
+@media (max-width: 1280px) and (min-width: 1160px){
     button.warehouse_place{
-        width: 55%;
+        width: 62%;
     }
 }
 @media(max-width: 1440px) and (min-width: 1420px){
@@ -134,8 +149,8 @@ h3 {
         width: 44%;
     }
 }
-@media (max-width: 1366px) and (min-width: 1250px){
+@media (max-width: 1366px) and (min-width: 1300px){
     button.warehouse_place{
-        width: 68%;
+        width: 66%;
     }
 }
