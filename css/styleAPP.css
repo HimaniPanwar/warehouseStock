@@ -141,11 +141,11 @@ p.small {
 
 /* Animation Delay */
 #logo {
-  -webkit-animation-duration: 1s;
-  -webkit-animation-delay: 2s;
+   animation-duration: 1s;
+   animation-delay: 2s;
 }
 
 .login-box {
-  -webkit-animation-duration: 1s;
-  -webkit-animation-delay: 1s;
+  animation-duration: 1s;
+  animation-delay: 1s;
 }
